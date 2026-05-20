@@ -1,0 +1,7 @@
+- hosts: localhost
+  tasks:
+    - name: Remove old container
+      shell: docker rm -f poc7 || true
+
+    - name: Run container
+      shell: docker run -d -p 80:80 --name poc7 kathiradmin/poc7-app
